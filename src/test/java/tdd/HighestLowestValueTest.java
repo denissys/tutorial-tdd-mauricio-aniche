@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import tdd.exception.EmptyListException;
 
-public class MaiorMenorTest {
+public class HighestLowestValueTest {
 	
 	private final static int[] NUMBER_LIST_ANY_ORDER = {10, 3, 22, 1};
 	private final static int[] NUMBER_LIST_ASC_ORDER = {1, 2, 3, 4};
