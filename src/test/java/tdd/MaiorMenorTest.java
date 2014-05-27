@@ -22,42 +22,42 @@ public class MaiorMenorTest {
 	}
 	
 	@Test
-	public void deveRetornarOMenorValorDaLista() throws EmptyListException {
+	public void shouldReturnLowestValueOfList() throws EmptyListException {
 		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_ANY_ORDER));
 	}
 	
 	@Test
-	public void deveRetornarOMenorValorDaListaCrescente() throws EmptyListException {
+	public void shouldReturnLowestValueOfAscList() throws EmptyListException {
 		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_ASC_ORDER));
 	}
 	
 	@Test
-	public void deveRetornarOMenorValorDaListaDecrescente() throws EmptyListException {
+	public void shouldReturnLowestValueOfDescList() throws EmptyListException {
 		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_DESC_ORDER));
 	}
 	
 	@Test(expected = EmptyListException.class)
-	public void deveRetornarOMenorValorDaListaVazia() throws EmptyListException {
+	public void shouldReturnExceptionOnLowestWhenEmptyList() throws EmptyListException {
 		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_EMPTY));
 	}
 	
 	@Test
-	public void deveRetornarOMaiorValorDaLista() throws EmptyListException {
+	public void shouldReturnHighestValueOfList() throws EmptyListException {
 		assertEquals(22, maiorMenor.getMaior(NUMBER_LIST_ANY_ORDER));
 	}
 	
 	@Test
-	public void deveRetornarOMaiorValorDaListaCrescente() throws EmptyListException {
+	public void shouldReturnHighestValueOfAscList() throws EmptyListException {
 		assertEquals(4, maiorMenor.getMaior(NUMBER_LIST_ASC_ORDER));
 	}
 	
 	@Test
-	public void deveRetornarOMaiorValorDaListaDecrescente() throws EmptyListException {
+	public void shouldReturnHighestValueOfDescList() throws EmptyListException {
 		assertEquals(4, maiorMenor.getMaior(NUMBER_LIST_DESC_ORDER));
 	}
 	
 	@Test(expected = EmptyListException.class)
-	public void deveRetornarOMaiorValorDaListaVazia() throws EmptyListException {
+	public void shouldReturnExceptionOnHighestWhenEmptyList() throws EmptyListException {
 		assertEquals(1, maiorMenor.getMaior(NUMBER_LIST_EMPTY));
 	}
 }
