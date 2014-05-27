@@ -2,15 +2,14 @@ package tdd;
 
 import static java.lang.Integer.MAX_VALUE;
 import static java.lang.Integer.MIN_VALUE;
+import tdd.exception.EmptyListException;
 
-import java.util.Arrays;
+public class MaiorMenor {
 
-public abstract class MaiorMenor {
-
-	private static int menor = MAX_VALUE;
-	private static int maior = MIN_VALUE;
-
-	public static int getMenor(int[] numeros) {
+	public int getMenor(int[] numeros) throws EmptyListException {
+		int menor = MAX_VALUE;
+		validList(numeros);
+		
 		for (int i = 0; i < numeros.length; i++) {
 			if(numeros[i] < menor) {
 				menor = numeros[i];
@@ -18,8 +17,11 @@ public abstract class MaiorMenor {
 		}
 		return menor;
 	}
-	
-	public static int getMaior(int[] numeros) {
+
+	public int getMaior(int[] numeros) throws EmptyListException {
+		int maior = MIN_VALUE;
+		validList(numeros);
+		
 		for (int i = 0; i < numeros.length; i++) {
 			if(numeros[i] > maior) {
 				maior = numeros[i];
@@ -28,10 +30,9 @@ public abstract class MaiorMenor {
 		return maior;
 	}
 	
-	public static void main(String[] args) {
-		int[] numeros = {10, 3, 4, 20};
-		System.out.println("Valores: " + Arrays.toString(numeros));
-		System.out.println("O menor valor é: " + getMenor(numeros));
-		System.out.println("O maior valor é: " + getMaior(numeros));
+	private void validList(int[] numeros) throws EmptyListException {
+		if(numeros.length == 0) {
+			throw new EmptyListException("A lista não deve estar vazia.");
+		}
 	}
 }
