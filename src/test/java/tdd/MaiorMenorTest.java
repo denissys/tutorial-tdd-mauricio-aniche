@@ -14,50 +14,50 @@ public class MaiorMenorTest {
 	private final static int[] NUMBER_LIST_DESC_ORDER = {4, 3, 2, 1};
 	private final static int[] NUMBER_LIST_EMPTY = {};
 
-	private MaiorMenor maiorMenor;
+	private HighestLowestValue highestLowestValue;
 	
 	@Before
 	public void setUp() {
-		this.maiorMenor = new MaiorMenor();
+		this.highestLowestValue = new HighestLowestValue();
 	}
 	
 	@Test
 	public void shouldReturnLowestValueOfList() throws EmptyListException {
-		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_ANY_ORDER));
+		assertEquals(1, highestLowestValue.getLowest(NUMBER_LIST_ANY_ORDER));
 	}
 	
 	@Test
 	public void shouldReturnLowestValueOfAscList() throws EmptyListException {
-		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_ASC_ORDER));
+		assertEquals(1, highestLowestValue.getLowest(NUMBER_LIST_ASC_ORDER));
 	}
 	
 	@Test
 	public void shouldReturnLowestValueOfDescList() throws EmptyListException {
-		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_DESC_ORDER));
+		assertEquals(1, highestLowestValue.getLowest(NUMBER_LIST_DESC_ORDER));
 	}
 	
 	@Test(expected = EmptyListException.class)
 	public void shouldReturnExceptionOnLowestWhenEmptyList() throws EmptyListException {
-		assertEquals(1, maiorMenor.getMenor(NUMBER_LIST_EMPTY));
+		assertEquals(1, highestLowestValue.getLowest(NUMBER_LIST_EMPTY));
 	}
 	
 	@Test
 	public void shouldReturnHighestValueOfList() throws EmptyListException {
-		assertEquals(22, maiorMenor.getMaior(NUMBER_LIST_ANY_ORDER));
+		assertEquals(22, highestLowestValue.getHighest(NUMBER_LIST_ANY_ORDER));
 	}
 	
 	@Test
 	public void shouldReturnHighestValueOfAscList() throws EmptyListException {
-		assertEquals(4, maiorMenor.getMaior(NUMBER_LIST_ASC_ORDER));
+		assertEquals(4, highestLowestValue.getHighest(NUMBER_LIST_ASC_ORDER));
 	}
 	
 	@Test
 	public void shouldReturnHighestValueOfDescList() throws EmptyListException {
-		assertEquals(4, maiorMenor.getMaior(NUMBER_LIST_DESC_ORDER));
+		assertEquals(4, highestLowestValue.getHighest(NUMBER_LIST_DESC_ORDER));
 	}
 	
 	@Test(expected = EmptyListException.class)
 	public void shouldReturnExceptionOnHighestWhenEmptyList() throws EmptyListException {
-		assertEquals(1, maiorMenor.getMaior(NUMBER_LIST_EMPTY));
+		assertEquals(1, highestLowestValue.getHighest(NUMBER_LIST_EMPTY));
 	}
 }
